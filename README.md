@@ -79,35 +79,37 @@ cd async-postgres-driver
 2. Start the Database:
    The included docker-compose.yml file will start a PostgreSQL instance.
     ```bash
-        docker-compose up -d
+    docker-compose up -d
     ```
 
 3. Create Test Table:
    For the tests to run, you need to create a simple table in the database. 
     ```bash
-        docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
+    docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
     ```
 
 4. Install Dependencies:
    Set up a virtual environment and install testing tools.
    ```bash
-        python -m venv venv
-        source venv/bin/activate
-        pip install -r requirements.txt
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
    ```
 
 ## Running Tests
 
 After setting up the environment and creating the test table, you can run the full test suite.
 
-```bash pytest ```
+```bash 
+pytest
+```
 
 Future Improvements
 
-This project provides a solid foundation. Future work could include:
+### This project provides a solid foundation. Future work could include:
 
-* **Connection Pooling: To manage and reuse connections efficiently.
+* Connection Pooling: To manage and reuse connections efficiently.
 
-* **Expanded Data Type Support: Adding parsers for more types like TIMESTAMP, JSONB, UUID, and NUMERIC.
+* Expanded Data Type Support: Adding parsers for more types like TIMESTAMP, JSONB, UUID, and NUMERIC.
 
-* **Full Transaction Management: A cleaner API for handling BEGIN, COMMIT, and ROLLBACK.
+* Full Transaction Management: A cleaner API for handling BEGIN, COMMIT, and ROLLBACK.
