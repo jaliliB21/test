@@ -65,6 +65,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+---
 
 ## Development Setup
 
@@ -95,6 +96,7 @@ cd async-postgres-driver
    source venv/bin/activate
    pip install -r requirements.txt
    ```
+---
 
 ## Running Tests
 
