@@ -106,7 +106,7 @@ pip install -r requirements.txt
 
 After setting up the environment and creating the test table, you can run the full test suite.
 
-pytest
+```bash pytest ```
 
 ## Future Improvements
 
