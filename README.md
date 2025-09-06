@@ -72,8 +72,8 @@ To run this project locally for development or testing, you'll need Python 3.8+ 
 
 1. Clone the Repository:
 ```bash
-        git clone https://github.com/[Your-GitHub-Username]/async-postgres-driver.git
-        cd async-postgres-driver
+git clone https://github.com/[Your-GitHub-Username]/async-postgres-driver.git
+cd async-postgres-driver
 ```
 
 3. Start the Database:
