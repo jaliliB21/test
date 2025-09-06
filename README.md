@@ -5,12 +5,16 @@ Motivation
 
 This project was undertaken as a deep dive into the fundamentals of how database drivers work. By implementing the PostgreSQL wire protocol directly, without relying on external libraries for the core logic, it showcases the ability to work with network protocols, handle complex authentication flows, and manage data at the byte level.
 
-Disclaimer: This driver is an educational project built for a portfolio. For production applications, please use mature and battle-tested libraries like asyncpg.
+Disclaimer
+This driver is an educational project built for a portfolio. For production applications, please use mature and battle-tested libraries like asyncpg.
 Key Features
 
-Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
+Secure Authentication
 
-SQL Injection Protection: Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
+Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
+
+## SQL Injection Protection
+Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
 
 Automatic Data Type Conversion: Intelligently parses RowDescription messages to convert PostgreSQL data types (like INT, BOOL, TEXT, VARCHAR) into their proper Python equivalents (int, bool, str). Also handles NULL values correctly.
 
