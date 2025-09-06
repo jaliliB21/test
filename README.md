@@ -19,7 +19,6 @@ Disclaimer: This driver is an educational project built for a portfolio. For pro
     Zero Core Dependencies: The driver's core logic relies only on Python's standard library.
 
 
-
 ## Usage Example
 
 The driver provides a clean and straightforward API for connecting and executing queries securely.
@@ -72,24 +71,24 @@ if __name__ == "__main__":
 
 To run this project locally for development or testing, you'll need Python 3.8+ and Docker.
 
-    1. **Clone the Repository:
+    1. Clone the Repository:
         ```bash
             git clone https://github.com/[Your-GitHub-Username]/async-postgres-driver.git
             cd async-postgres-driver
         ```
-    2. **Start the Database:
+    2. Start the Database:
        The included docker-compose.yml file will start a PostgreSQL instance.
         ```bash
             docker-compose up -d
         '''
 
-    3. **Create Test Table:
+    3. Create Test Table:
        For the tests to run, you need to create a simple table in the database. 
         '''bash
             docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
         ```
 
-    4. **Install Dependencies:
+    4. Install Dependencies:
        Set up a virtual environment and install testing tools.
        ```bash
             python -m venv venv
