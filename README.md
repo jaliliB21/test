@@ -1,4 +1,4 @@
-## Async PG Driver
+# Async PG Driver
 
 A minimalist, asynchronous PostgreSQL driver for Python, built from scratch using asyncio. This project demonstrates a deep, practical understanding of low-level database protocols and secure, non-blocking network programming.
 
@@ -10,15 +10,15 @@ Disclaimer: This driver is an educational project built for a portfolio. For pro
 
 ## Key Features
 
-* Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
+- **Secure Authentication:** Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
 
-* SQL Injection Protection: Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
+- **SQL Injection Protection:** Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
 
-* Automatic Data Type Conversion: Intelligently parses RowDescription messages to convert PostgreSQL data types (like INT, BOOL, TEXT, VARCHAR) into their proper Python equivalents (int, bool, str). Also handles NULL values correctly.
+- **Automatic Data Type Conversion:** Intelligently parses RowDescription messages to convert PostgreSQL data types (like INT, BOOL, TEXT, VARCHAR) into their proper Python equivalents (int, bool, str). Also handles NULL values correctly.
 
-* Clean, Asynchronous API: Provides a simple, object-oriented API built entirely on Python's asyncio for non-blocking I/O.
+- **Clean, Asynchronous API:** Provides a simple, object-oriented API built entirely on Python's asyncio for non-blocking I/O.
 
-* Zero Core Dependencies: The driver's core logic relies only on Python's standard library.
+- **Zero Core Dependencies:** The driver's core logic relies only on Python's standard library.
 
 
 ## Usage Example
@@ -74,41 +74,39 @@ if __name__ == "__main__":
 
 To run this project locally for development or testing, you'll need Python +3.8 and Docker.
 
-### 1. Clone the Repository:
+1. **Clone the Repository:**
 ```bash
 git clone https://github.com/[Your-GitHub-Username]/async-postgres-driver.git
 cd async-postgres-driver
 ```
 
-### 2. Start the Database:
+2. **Start the Database:**
 The included docker-compose.yml file will start a PostgreSQL instance.
 ```bash
 docker-compose up -d
 ```
 
-### 3. Create Test Table:
+3. **Create Test Table:**
 For the tests to run, you need to create a simple table in the database. 
 
 ```bash
 docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
 ```
 
-### 4. Install Dependencies:
+4. **Install Dependencies:**
 Set up a virtual environment and install testing tools.
-   ```bash
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
----
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 
 ## Running Tests
 
 After setting up the environment and creating the test table, you can run the full test suite.
 
-```bash 
 pytest
-```
 
 ## Future Improvements
 
