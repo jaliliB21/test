@@ -1,4 +1,4 @@
-Async PG Driver
+# Async PG Driver
 
 A minimalist, asynchronous PostgreSQL driver for Python, built from scratch using asyncio. This project demonstrates a deep, practical understanding of low-level database protocols and secure, non-blocking network programming.
 Motivation
@@ -18,7 +18,7 @@ Clean, Asynchronous API: Provides a simple, object-oriented API built entirely o
 
 Zero Core Dependencies: The driver's core logic relies only on Python's standard library.
 
-Usage Example
+## Usage Example
 
 The driver provides a clean and straightforward API for connecting and executing queries securely.
 ```python
@@ -86,7 +86,7 @@ cd async-postgres-driver
 3. Create Test Table:
    For the tests to run, you need to create a simple table in the database. 
     ```bash
-    docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
+   docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
     ```
 
 4. Install Dependencies:
