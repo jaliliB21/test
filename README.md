@@ -8,15 +8,16 @@ Disclaimer: This driver is an educational project built for a portfolio. For pro
 
 ## Key Features
 
-### Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
+    Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
 
-    * SQL Injection Protection: Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
+    SQL Injection Protection: Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
 
-    * Automatic Data Type Conversion: Intelligently parses RowDescription messages to convert PostgreSQL data types (like INT, BOOL, TEXT, VARCHAR) into their proper Python equivalents (int, bool, str). Also handles NULL values correctly.
+    Automatic Data Type Conversion: Intelligently parses RowDescription messages to convert PostgreSQL data types (like INT, BOOL, TEXT, VARCHAR) into their proper Python equivalents (int, bool, str). Also handles NULL values correctly.
 
-    * Clean, Asynchronous API: Provides a simple, object-oriented API built entirely on Python's asyncio for non-blocking I/O.**
+    Clean, Asynchronous API: Provides a simple, object-oriented API built entirely on Python's asyncio for non-blocking I/O.
 
-    * Zero Core Dependencies: The driver's core logic relies only on Python's standard library.**
+    Zero Core Dependencies: The driver's core logic relies only on Python's standard library.
+
 
 
 ## Usage Example
