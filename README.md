@@ -8,20 +8,20 @@ This project was undertaken as a deep dive into the fundamentals of how database
 Disclaimer: This driver is an educational project built for a portfolio. For production applications, please use mature and battle-tested libraries like asyncpg.
 Key Features
 
-    Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
+Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
 
-    SQL Injection Protection: Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
+SQL Injection Protection: Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
 
-    Automatic Data Type Conversion: Intelligently parses RowDescription messages to convert PostgreSQL data types (like INT, BOOL, TEXT, VARCHAR) into their proper Python equivalents (int, bool, str). Also handles NULL values correctly.
+Automatic Data Type Conversion: Intelligently parses RowDescription messages to convert PostgreSQL data types (like INT, BOOL, TEXT, VARCHAR) into their proper Python equivalents (int, bool, str). Also handles NULL values correctly.
 
-    Clean, Asynchronous API: Provides a simple, object-oriented API built entirely on Python's asyncio for non-blocking I/O.
+Clean, Asynchronous API: Provides a simple, object-oriented API built entirely on Python's asyncio for non-blocking I/O.
 
-    Zero Core Dependencies: The driver's core logic relies only on Python's standard library.
+Zero Core Dependencies: The driver's core logic relies only on Python's standard library.
 
 Usage Example
 
 The driver provides a clean and straightforward API for connecting and executing queries securely.
-
+```python
 import asyncio
 from async_driver import Driver, exceptions
 
@@ -63,45 +63,48 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
+```
 Development Setup
 
 To run this project locally for development or testing, you'll need Python 3.8+ and Docker.
 
-    Clone the Repository:
+1. Clone the Repository:
+    ```bash
+        git clone https://github.com/[Your-GitHub-Username]/async-postgres-driver.git
+        cd async-postgres-driver
+    ```
+2. Start the Database:
+   The included docker-compose.yml file will start a PostgreSQL instance.
+    ```bash
+        docker-compose up -d
+    '''
 
-    git clone [https://github.com/](https://github.com/)[Your-GitHub-Username]/async-postgres-driver.git
-    cd async-postgres-driver
+3. Create Test Table:
+   For the tests to run, you need to create a simple table in the database. 
+    '''bash
+        docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
+    ```
 
-    Start the Database:
-    The included docker-compose.yml file will start a PostgreSQL instance.
-
-    docker-compose up -d
-
-    Create Test Table:
-    For the tests to run, you need to create a simple table in the database.
-
-    docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
-
-    Install Dependencies:
-    Set up a virtual environment and install testing tools.
-
-    python -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+4. Install Dependencies:
+   Set up a virtual environment and install testing tools.
+   ```bash
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+   ```
 
 Running Tests
 
 After setting up the environment and creating the test table, you can run the full test suite.
 
-pytest
+    pytest
 
 Future Improvements
 
 This project provides a solid foundation. Future work could include:
 
-    Connection Pooling: To manage and reuse connections efficiently.
+* **Connection Pooling: To manage and reuse connections efficiently.
 
-    Expanded Data Type Support: Adding parsers for more types like TIMESTAMP, JSONB, UUID, and NUMERIC.
+* **Expanded Data Type Support: Adding parsers for more types like TIMESTAMP, JSONB, UUID, and NUMERIC.
 
-    Full Transaction Management: A cleaner API for handling BEGIN, COMMIT, and ROLLBACK.
+* **Full Transaction Management: A cleaner API for handling BEGIN, COMMIT, and ROLLBACK.
