@@ -82,19 +82,19 @@ cd async-postgres-driver
 ```
 
 2. Start the Database:
-   The included docker-compose.yml file will start a PostgreSQL instance.
+The included docker-compose.yml file will start a PostgreSQL instance.
     ```bash
     docker-compose up -d
     ```
 
 3. Create Test Table:
-   For the tests to run, you need to create a simple table in the database. 
+For the tests to run, you need to create a simple table in the database. 
     ```bash
    docker exec -it postgres_for_driver psql -U myuser -d mydb -c "CREATE TABLE test_data (id INT PRIMARY KEY, name TEXT, is_active BOOLEAN); INSERT INTO test_data VALUES (1, 'Alice', TRUE), (2, 'Bob', FALSE);"
     ```
 
 4. Install Dependencies:
-   Set up a virtual environment and install testing tools.
+Set up a virtual environment and install testing tools.
    ```bash
    python -m venv venv
    source venv/bin/activate
