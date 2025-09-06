@@ -8,7 +8,7 @@ Disclaimer: This driver is an educational project built for a portfolio. For pro
 
 ## Key Features
 
-    ### Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
+### Secure Authentication: Implements the modern SCRAM-SHA-256 challenge-response mechanism from scratch for secure password authentication.
 
     * SQL Injection Protection: Uses the Extended Query Protocol (Parse/Bind/Execute) for all queries, making it secure by default against SQL injection attacks.
 
